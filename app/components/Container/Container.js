@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
-const Container = ({ children }) => (
-  <View>
-    <Text>Puto</Text>
-    {children}
-  </View>
-);
+import styles from './styles';
+
+const Container = ({ children }) => <View style={styles.container}>{children}</View>;
 
 Container.propTypes = {
-  children: PropTypes.element,
+	children: PropTypes.any,
 };
 
 export default Container;

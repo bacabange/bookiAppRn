@@ -25,6 +25,12 @@
         ],
         "global-require": [
             0
-        ]
+        ],
+        "import/no-unresolved": [
+            2, {
+                "ignore": ["@lib", "@navigation"]
+            }
+        ],
+        "import/extensions": ["ignorePackages"],
     }
 }

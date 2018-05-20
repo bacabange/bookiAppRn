@@ -6,6 +6,7 @@ import { AuthScreen } from './screens/AuthScreen';
 EStyleSheet.build({
   $primary: '#ef476f',
   $white: '#ffffff',
+  $white7: '#f7f7f7',
   $yellow: '#ffd166',
   $green: '#06d6a0',
   $blue: '#118ab2',

@@ -12,4 +12,12 @@ export default EStyleSheet.create({
     textAlign: 'center',
     marginBottom: 15,
   },
+  wrapperTop: {
+    flex: 2,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+  },
+  wrapperBottom: {
+    flex: 1,
+  },
 });

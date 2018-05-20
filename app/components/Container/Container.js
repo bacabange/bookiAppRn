@@ -1,13 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, TouchableWithoutFeedback, Keyboard, StatusBar } from 'react-native';
 
 import styles from './styles';
 
-const Container = ({ children }) => <View style={styles.container}>{children}</View>;
+const Container = ({ children, style }) => {
+  const containerStyles = [styles.container];
+
+  if (style) {
+    containerStyles.push(style);
+  }
+
+  return (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <React.Fragment>
+        <StatusBar translucent={false} barStyle="light-content" backgroundColor="blue" />
+        <View style={containerStyles}>{children}</View>
+      </React.Fragment>
+    </TouchableWithoutFeedback>
+  );
+};
 
 Container.propTypes = {
-	children: PropTypes.any,
+  children: PropTypes.any,
+  style: PropTypes.any,
 };
 
 export default Container;

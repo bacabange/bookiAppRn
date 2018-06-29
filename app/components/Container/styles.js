@@ -1,5 +1,5 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { StatusBar } from 'react-native';
 
 export default EStyleSheet.create({
   container: {
@@ -7,6 +7,11 @@ export default EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '$white',
-    paddingTop: getStatusBarHeight(),
+    '@media ios': {
+      paddingTop: 20,
+    },
+    '@media android': {
+      paddingTop: StatusBar.currentHeight,
+    },
   },
 });

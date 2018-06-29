@@ -1,10 +1,6 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 import * as constants from '../../config/const';
 
-const INPUT_HEIGHT = 48;
-const BORDER_RADIUS = 4;
-const BORDER_WIDTH = 2;
-
 export default EStyleSheet.create({
   // Container default
   container: {
@@ -15,7 +11,7 @@ export default EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    width: '100%',
+    // width: '100%',
   },
   // Container line default
   containerLine: {

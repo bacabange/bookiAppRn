@@ -10,7 +10,7 @@ export default EStyleSheet.create({
   },
   textAction: {
     textAlign: 'center',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   wrapperTop: {
     flex: 2,
@@ -18,6 +18,14 @@ export default EStyleSheet.create({
     justifyContent: 'center',
   },
   wrapperBottom: {
+    flex: 1,
+  },
+  wrapperHorintalButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  buttonContainer: {
     flex: 1,
   },
 });

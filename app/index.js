@@ -1,6 +1,6 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { Splash } from './screens/Splash';
+// import { Splash } from './screens/Splash';
 import { AuthScreen } from './screens/AuthScreen';
 
 EStyleSheet.build({
@@ -12,6 +12,9 @@ EStyleSheet.build({
   $blue: '#118ab2',
   $black: '#333333',
   $gray: '#666666',
+
+  // Debug UI
+  // $outline: 1,
 });
 
 export default AuthScreen;

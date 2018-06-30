@@ -49,7 +49,7 @@ const Button = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress} activeOpacity={0.8}>
       <View style={containerStyle}>
-        <Text style={textStyle}>{props.buttonText.toUpperCase()}</Text>
+        <Text style={textStyle}>{props.text.toUpperCase()}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -58,7 +58,7 @@ const Button = (props) => {
 Button.propTypes = {
   onPress: PropTypes.func,
   style: PropTypes.any,
-  buttonText: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   buttonLine: PropTypes.bool,
   buttonColor: PropTypes.oneOf(constants.BUTTON_STYLES),
 };

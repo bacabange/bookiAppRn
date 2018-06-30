@@ -8,4 +8,7 @@ export default EStyleSheet.create({
     paddingHorizontal: 15,
     alignItems: 'stretch',
   },
+  buttonLink: {
+    marginBottom: 10,
+  },
 });

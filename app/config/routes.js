@@ -5,6 +5,7 @@ import { AuthScreen } from '../screens/AuthScreen';
 import { Splash } from '../screens/Splash';
 import HomeScreen from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
+import { RegisterScreen } from '../screens/RegisterScreen';
 
 // Init theme
 EStyleSheet.build({
@@ -24,9 +25,13 @@ EStyleSheet.build({
 
 const AppStack = createStackNavigator({ Home: HomeScreen });
 const AuthStack = createStackNavigator(
-  { Auth: { screen: AuthScreen, navigationOptions: { header: null } }, Login: LoginScreen },
   {
-    initialRouteName: 'Login',
+    Auth: { screen: AuthScreen, navigationOptions: { header: null } },
+    Login: LoginScreen,
+    Register: RegisterScreen,
+  },
+  {
+    initialRouteName: 'Auth',
     navigationOptions: {
       headerStyle: {
         backgroundColor: EStyleSheet.value('$primary'),

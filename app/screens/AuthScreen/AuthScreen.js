@@ -19,6 +19,10 @@ class AuthScreen extends Component {
 	  this.props.navigation.navigate('Login');
 	};
 
+	handlePressRegister = () => {
+	  this.props.navigation.navigate('Register');
+	};
+
 	render() {
 	  return (
   <Container style={styles.container}>
@@ -33,7 +37,7 @@ class AuthScreen extends Component {
         <View style={styles.buttonContainer}>
           <Button
             style={{ marginHorizontal: 5 }}
-            buttonText="Login"
+            text="Login"
             buttonColor={constants.BTN_PRIMARY}
             buttonLine
             onPress={this.handlePressLogin}
@@ -43,15 +47,16 @@ class AuthScreen extends Component {
         <View style={styles.buttonContainer}>
           <Button
             style={{ marginHorizontal: 5 }}
-            buttonText="Register"
+            text="Register"
             buttonColor={constants.BTN_PRIMARY}
+            onPress={this.handlePressRegister}
           />
         </View>
       </View>
 
       <Button
         style={{ marginHorizontal: 5 }}
-        buttonText="Login With Faceboook"
+        text="Login With Faceboook"
         buttonColor={constants.BTN_BLUE}
       />
     </View>

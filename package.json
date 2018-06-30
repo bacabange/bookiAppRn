@@ -38,7 +38,8 @@
     "react-native-dropdownalert": "^3.4.0",
     "react-native-extended-stylesheet": "0.8.0",
     "react-native-status-bar-height": "^2.0.0",
-    "react-navigation": "^2.0.1"
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.5.5"
   },
   "rnpm": {
     "assets": [

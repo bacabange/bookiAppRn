@@ -62,4 +62,5 @@ Button.propTypes = {
   buttonLine: PropTypes.bool,
   buttonColor: PropTypes.oneOf(constants.BUTTON_STYLES),
 };
+
 export default Button;

@@ -14,7 +14,7 @@ export default EStyleSheet.create({
   },
   wrapperTop: {
     flex: 2,
-    alignItems: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   wrapperBottom: {

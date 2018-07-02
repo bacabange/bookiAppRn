@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, TouchableWithoutFeedback, Keyboard, StatusBar } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import styles from './styles';
 
@@ -14,12 +15,7 @@ const Container = ({ children, style }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <React.Fragment>
-        <StatusBar
-          currentHeight={60}
-          translucent
-          barStyle="light-content"
-          backgroundColor="blue"
-        />
+        <StatusBar currentHeight={60} translucent barStyle="light-content" backgroundColor={EStyleSheet.value('$primary')} />
         <View style={containerStyles}>{children}</View>
       </React.Fragment>
     </TouchableWithoutFeedback>

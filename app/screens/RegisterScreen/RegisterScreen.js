@@ -13,7 +13,7 @@ import * as constants from '../../config/const';
 
 const RegisterScreen = () => (
   <Container style={styles.container}>
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior="height">
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
       <View style={styles.fieldsContainer}>
         <InputGroup label="Name">
           <InputText

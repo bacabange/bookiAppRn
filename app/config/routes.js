@@ -1,3 +1,4 @@
+import { Platform, StatusBar } from 'react-native';
 import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 import EStyleSheet from 'react-native-extended-stylesheet';
 // import { createBottomTabNavigator } from 'react-navigation';
@@ -37,6 +38,9 @@ const AuthStack = createStackNavigator(
         backgroundColor: EStyleSheet.value('$primary'),
       },
       headerTintColor: EStyleSheet.value('$white'),
+    },
+    cardStyle: {
+      paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
     },
   },
 );

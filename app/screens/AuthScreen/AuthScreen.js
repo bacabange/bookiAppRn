@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
+import lang from '../../i18n';
 
 import styles from './styles';
 
@@ -37,7 +38,7 @@ class AuthScreen extends Component {
         <View style={styles.buttonContainer}>
           <Button
             style={{ marginHorizontal: 5 }}
-            text="Login"
+            text={lang('login')}
             buttonColor={constants.BTN_PRIMARY}
             buttonLine
             onPress={this.handlePressLogin}

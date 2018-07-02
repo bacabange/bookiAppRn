@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
-import lang from '../../i18n';
 
 import styles from './styles';
 
@@ -9,6 +8,7 @@ import { Container } from '../../components/Container';
 import { Button } from '../../components/Button';
 // import { BubbleText } from '../../components/BubbleText';
 import { Logo } from '../../components/Logo';
+import lang from '../../i18n';
 import * as constants from '../../config/const';
 
 class AuthScreen extends Component {
@@ -32,7 +32,7 @@ class AuthScreen extends Component {
       <Logo withText />
     </View>
     <View style={styles.wrapperBottom}>
-      <Text style={styles.textAction}>Empieza a leer en forma</Text>
+      <Text style={styles.textAction}>{lang('login_txt_1')}</Text>
 
       <View style={styles.wrapperHorintalButtons}>
         <View style={styles.buttonContainer}>

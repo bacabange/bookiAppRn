@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, KeyboardAvoidingView } from 'react-native';
+import lang from '../../i18n';
 
 import styles from './styles';
 
@@ -15,7 +16,7 @@ const RegisterScreen = () => (
   <Container style={styles.container}>
     <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
       <View style={styles.fieldsContainer}>
-        <InputGroup label="Name">
+        <InputGroup label={lang('name')}>
           <InputText
             placeholder="Jhon Doe"
             autoCorrect={false}
@@ -24,7 +25,7 @@ const RegisterScreen = () => (
           />
         </InputGroup>
 
-        <InputGroup label="Email">
+        <InputGroup label={lang('email')}>
           <InputText
             placeholder="jhon.doe@example.com"
             autoCorrect={false}
@@ -33,9 +34,8 @@ const RegisterScreen = () => (
           />
         </InputGroup>
 
-        <InputGroup label="Password">
+        <InputGroup label={lang('password')}>
           <InputText
-            placeholder="Hola marrano"
             autoCorrect={false}
             textContentType="password"
             secureTextEntry
@@ -44,9 +44,9 @@ const RegisterScreen = () => (
           />
         </InputGroup>
 
-        <Button text="Register" buttonColor={constants.BTN_PRIMARY} />
+        <Button text={lang('register')} buttonColor={constants.BTN_PRIMARY} />
 
-        <ButtonLink text="Tienes una cuenta? Inicia sesión aquí" style={styles.buttonLink} />
+        <ButtonLink text={lang('login_txt_3')} style={styles.buttonLink} />
       </View>
     </KeyboardAvoidingView>
   </Container>

@@ -7,6 +7,7 @@ export default EStyleSheet.create({
     backgroundColor: '$white',
     paddingHorizontal: 15,
     alignItems: 'stretch',
+    paddingTop: 20,
   },
   buttonLink: {
     marginBottom: 10,

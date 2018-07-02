@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, KeyboardAvoidingView } from 'react-native';
+import lang from '../../i18n';
 
 import styles from './styles';
 
@@ -15,9 +16,9 @@ const LoginScreen = () => (
   <Container style={styles.container}>
     <KeyboardAvoidingView behavior="padding" enabled>
       <View style={styles.fieldsContainer}>
-        <InputGroup label="Email">
+        <InputGroup label={lang('email')}>
           <InputText
-            placeholder="jhon.doe@example.com"
+            placeholder="jhon.does@example.com"
             autoCorrect={false}
             keyboardType="email-address"
             autoFocus
@@ -25,9 +26,8 @@ const LoginScreen = () => (
           />
         </InputGroup>
 
-        <InputGroup label="Password">
+        <InputGroup label={lang('password')}>
           <InputText
-            placeholder="Hola marrano"
             autoCorrect={false}
             textContentType="password"
             secureTextEntry
@@ -36,9 +36,9 @@ const LoginScreen = () => (
           />
         </InputGroup>
 
-        <ButtonLink text="Recordar contraseña" style={styles.buttonLink} />
+        <ButtonLink text={lang('login_txt_2')} style={styles.buttonLink} />
 
-        <Button text="Login" buttonColor={constants.BTN_PRIMARY} />
+        <Button text={lang('login')} buttonColor={constants.BTN_PRIMARY} />
       </View>
     </KeyboardAvoidingView>
   </Container>

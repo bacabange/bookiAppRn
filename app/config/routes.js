@@ -7,6 +7,7 @@ import { Splash } from '../screens/Splash';
 import HomeScreen from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
 import { RegisterScreen } from '../screens/RegisterScreen';
+import lang from '../i18n';
 
 // Init theme
 EStyleSheet.build({
@@ -28,8 +29,18 @@ const AppStack = createStackNavigator({ Home: HomeScreen });
 const AuthStack = createStackNavigator(
   {
     Auth: { screen: AuthScreen, navigationOptions: { header: null } },
-    Login: LoginScreen,
-    Register: RegisterScreen,
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        headerTitle: lang('login'),
+      },
+    },
+    Register: {
+      screen: RegisterScreen,
+      navigationOptions: {
+        headerTitle: lang('register'),
+      },
+    },
   },
   {
     initialRouteName: 'Auth',

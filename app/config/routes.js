@@ -1,12 +1,20 @@
+import React from 'react';
 import { Platform, StatusBar } from 'react-native';
-import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
+import {
+  createSwitchNavigator,
+  createStackNavigator,
+  createBottomTabNavigator,
+} from 'react-navigation';
 import EStyleSheet from 'react-native-extended-stylesheet';
-// import { createBottomTabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
+// Auth Screens
 import { AuthScreen } from '../screens/AuthScreen';
 import { Splash } from '../screens/Splash';
-import HomeScreen from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
 import { RegisterScreen } from '../screens/RegisterScreen';
+// App screens
+// import HomeScreen from '../screens/HomeScreen';
+import { MyBooksScreen } from '../screens/MyBooksScreen';
 import lang from '../i18n';
 
 // Init theme
@@ -25,7 +33,32 @@ EStyleSheet.build({
   // $outline: 1,
 });
 
-const AppStack = createStackNavigator({ Home: HomeScreen });
+const AppStack = createBottomTabNavigator(
+  {
+    MyBooks: MyBooksScreen,
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => (
+        /* const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'MyBooks') {
+          iconName = 'ios-information-circle';
+        } else if (routeName === 'Settings') {
+          iconName = 'ios-options';
+        } */
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        <Icon name="rocket" size={25} color={tintColor} />
+      ),
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  },
+);
 const AuthStack = createStackNavigator(
   {
     Auth: { screen: AuthScreen, navigationOptions: { header: null } },

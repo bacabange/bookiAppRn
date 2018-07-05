@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, KeyboardAvoidingView } from 'react-native';
 import lang from '../../i18n';
 
@@ -12,36 +13,56 @@ import { ButtonLink } from '../../components/ButtonLink';
 
 import * as constants from '../../config/const';
 
-const LoginScreen = () => (
-  <Container style={styles.container}>
-    <KeyboardAvoidingView behavior="padding" enabled>
-      <View style={styles.fieldsContainer}>
-        <InputGroup label={lang('email')}>
-          <InputText
-            placeholder="jhon.does@example.com"
-            autoCorrect={false}
-            keyboardType="email-address"
-            autoFocus
-            onChangeText={value => console.log(value)}
-          />
-        </InputGroup>
+class LoginScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-        <InputGroup label={lang('password')}>
-          <InputText
-            autoCorrect={false}
-            textContentType="password"
-            secureTextEntry
-            returnKeyType="done"
-            onChangeText={value => console.log(value)}
-          />
-        </InputGroup>
+  handlePressLogin = () => {
+    this.props.navigation.navigate('App');
+  };
 
-        <ButtonLink text={lang('login_txt_2')} style={styles.buttonLink} />
+  render() {
+    return (
+      <Container style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" enabled>
+          <View style={styles.fieldsContainer}>
+            <InputGroup label={lang('email')}>
+              <InputText
+                placeholder="jhon.does@example.com"
+                autoCorrect={false}
+                keyboardType="email-address"
+                onChangeText={value => console.log(value)}
+              />
+            </InputGroup>
 
-        <Button text={lang('login')} buttonColor={constants.BTN_PRIMARY} />
-      </View>
-    </KeyboardAvoidingView>
-  </Container>
-);
+            <InputGroup label={lang('password')}>
+              <InputText
+                autoCorrect={false}
+                textContentType="password"
+                secureTextEntry
+                returnKeyType="done"
+                onChangeText={value => console.log(value)}
+              />
+            </InputGroup>
+
+            <ButtonLink text={lang('login_txt_2')} style={styles.buttonLink} />
+
+            <Button
+              text={lang('login')}
+              onPress={this.handlePressLogin}
+              buttonColor={constants.BTN_PRIMARY}
+            />
+          </View>
+        </KeyboardAvoidingView>
+      </Container>
+    );
+  }
+}
+
+LoginScreen.propTypes = {
+  navigation: PropTypes.any,
+};
 
 export default LoginScreen;

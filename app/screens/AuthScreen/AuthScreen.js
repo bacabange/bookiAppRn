@@ -16,54 +16,54 @@ class AuthScreen extends Component {
     console.log('-> Start Auth');
   }
 
-	handlePressLogin = () => {
-	  this.props.navigation.navigate('Login');
-	};
+  handlePressLogin = () => {
+    this.props.navigation.navigate('Login');
+  };
 
-	handlePressRegister = () => {
-	  this.props.navigation.navigate('Register');
-	};
+  handlePressRegister = () => {
+    this.props.navigation.navigate('Register');
+  };
 
-	render() {
-	  return (
-  <Container style={styles.container}>
-    <View style={styles.wrapperTop}>
-      {/* <BubbleText /> */}
-      <Logo withText />
-    </View>
-    <View style={styles.wrapperBottom}>
-      <Text style={styles.textAction}>{lang('login_txt_1')}</Text>
+  render() {
+    return (
+      <Container style={styles.container}>
+        <View style={styles.wrapperTop}>
+          {/* <BubbleText /> */}
+          <Logo withText />
+        </View>
+        <View style={styles.wrapperBottom}>
+          <Text style={styles.textAction}>{lang('login_txt_1')}</Text>
 
-      <View style={styles.wrapperHorintalButtons}>
-        <View style={styles.buttonContainer}>
+          <View style={styles.wrapperHorintalButtons}>
+            <View style={styles.buttonContainer}>
+              <Button
+                style={{ marginHorizontal: 5 }}
+                text={lang('login')}
+                buttonColor={constants.BTN_PRIMARY}
+                buttonLine
+                onPress={this.handlePressLogin}
+              />
+            </View>
+
+            <View style={styles.buttonContainer}>
+              <Button
+                style={{ marginHorizontal: 5 }}
+                text="Register"
+                buttonColor={constants.BTN_PRIMARY}
+                onPress={this.handlePressRegister}
+              />
+            </View>
+          </View>
+
           <Button
             style={{ marginHorizontal: 5 }}
-            text={lang('login')}
-            buttonColor={constants.BTN_PRIMARY}
-            buttonLine
-            onPress={this.handlePressLogin}
+            text="Login With Faceboook"
+            buttonColor={constants.BTN_BLUE}
           />
         </View>
-
-        <View style={styles.buttonContainer}>
-          <Button
-            style={{ marginHorizontal: 5 }}
-            text="Register"
-            buttonColor={constants.BTN_PRIMARY}
-            onPress={this.handlePressRegister}
-          />
-        </View>
-      </View>
-
-      <Button
-        style={{ marginHorizontal: 5 }}
-        text="Login With Faceboook"
-        buttonColor={constants.BTN_BLUE}
-      />
-    </View>
-  </Container>
-	  );
-	}
+      </Container>
+    );
+  }
 }
 
 AuthScreen.propTypes = {

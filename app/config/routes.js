@@ -15,6 +15,8 @@ import { RegisterScreen } from '../screens/RegisterScreen';
 // App screens
 // import HomeScreen from '../screens/HomeScreen';
 import { MyBooksScreen } from '../screens/MyBooksScreen';
+import { NotificationsScreen } from '../screens/NotificationsScreen';
+import { AccountScreen } from '../screens/AccountScreen';
 import lang from '../i18n';
 
 // Init theme
@@ -35,22 +37,36 @@ EStyleSheet.build({
 
 const AppStack = createBottomTabNavigator(
   {
-    MyBooks: MyBooksScreen,
+    MyBooks: {
+      screen: MyBooksScreen,
+      navigationOptions: {
+        title: lang('my_books'),
+        tabBarIcon: ({ tintColor }) => <Icon name="bookmark-o" size={25} color={tintColor} />,
+      },
+    },
+
+    Notifications: {
+      screen: NotificationsScreen,
+      navigationOptions: {
+        title: lang('notifications'),
+        tabBarIcon: ({ tintColor }) => <Icon name="bell-o" size={25} color={tintColor} />,
+      },
+    },
+
+    Account: {
+      screen: AccountScreen,
+      navigationOptions: {
+        title: lang('account'),
+        tabBarIcon: ({ tintColor }) => <Icon name="user-o" size={25} color={tintColor} />,
+      },
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => (
-        /* const { routeName } = navigation.state;
-        let iconName;
-        if (routeName === 'MyBooks') {
-          iconName = 'ios-information-circle';
-        } else if (routeName === 'Settings') {
-          iconName = 'ios-options';
-        } */
-
+      tabBarIcon: ({ tintColor }) => (
         // You can return any component that you like here! We usually use an
         // icon component from react-native-vector-icons
-        <Icon name="rocket" size={25} color={tintColor} />
+        <Icon name="user" size={25} color={tintColor} />
       ),
     }),
     tabBarOptions: {
@@ -96,6 +112,6 @@ export default createSwitchNavigator(
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'Auth',
+    initialRouteName: 'App',
   },
 );

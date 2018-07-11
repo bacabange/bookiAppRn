@@ -6,6 +6,9 @@ export default {
   email: 'Email',
   name: 'Name',
   password: 'Password',
+  my_books: 'My Books',
+  notifications: 'Notifications',
+  account: 'Account',
 
   // Text
   login_txt_1: 'Start to read without forget',

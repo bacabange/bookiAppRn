@@ -6,6 +6,9 @@ export default {
   email: 'Correo Electrónico',
   name: 'Nombre',
   password: 'Contraseña',
+  my_books: 'Mis Libros',
+  notifications: 'Notificaciones',
+  account: 'Cuenta',
 
   // Text
   login_txt_1: 'Empieza a leer sin olvidar',

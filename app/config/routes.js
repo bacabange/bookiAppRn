@@ -35,13 +35,13 @@ EStyleSheet.build({
   // $outline: 1,
 });
 
-const AppStack = createBottomTabNavigator(
+const TabStack = createBottomTabNavigator(
   {
     MyBooks: {
       screen: MyBooksScreen,
       navigationOptions: {
         title: lang('my_books'),
-        tabBarIcon: ({ tintColor }) => <Icon name="bookmark-o" size={25} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => <Icon name="bookmark-o" size={18} color={tintColor} />,
       },
     },
 
@@ -49,7 +49,7 @@ const AppStack = createBottomTabNavigator(
       screen: NotificationsScreen,
       navigationOptions: {
         title: lang('notifications'),
-        tabBarIcon: ({ tintColor }) => <Icon name="bell-o" size={25} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => <Icon name="bell-o" size={18} color={tintColor} />,
       },
     },
 
@@ -57,7 +57,7 @@ const AppStack = createBottomTabNavigator(
       screen: AccountScreen,
       navigationOptions: {
         title: lang('account'),
-        tabBarIcon: ({ tintColor }) => <Icon name="user-o" size={25} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => <Icon name="user-o" size={18} color={tintColor} />,
       },
     },
   },
@@ -66,15 +66,41 @@ const AppStack = createBottomTabNavigator(
       tabBarIcon: ({ tintColor }) => (
         // You can return any component that you like here! We usually use an
         // icon component from react-native-vector-icons
-        <Icon name="user" size={25} color={tintColor} />
+        <Icon name="user" size={18} color={tintColor} />
       ),
+      header: { visible: true },
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
+      activeTintColor: EStyleSheet.value('$primary'),
+      inactiveTintColor: EStyleSheet.value('$gray'),
     },
   },
 );
+
+const AppStack = createStackNavigator(
+  {
+    MyTab: {
+      screen: TabStack,
+      navigationOptions: { title: 'Booki' },
+    },
+  },
+  {
+    navigationOptions: {
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: EStyleSheet.value('$primary'),
+      },
+      headerTintColor: EStyleSheet.value('$white'),
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+    cardStyle: {
+      paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
+    },
+  },
+);
+
 const AuthStack = createStackNavigator(
   {
     Auth: { screen: AuthScreen, navigationOptions: { header: null } },

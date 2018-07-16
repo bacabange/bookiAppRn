@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './styles';
 
@@ -49,7 +50,10 @@ const Button = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress} activeOpacity={0.8}>
       <View style={containerStyle}>
-        <Text style={textStyle}>{props.text.toUpperCase()}</Text>
+        <Text style={textStyle}>
+          {props.icon ? <Icon name={props.icon} size={18} color="#FFF" /> : ''}{' '}
+          {props.text.toUpperCase()}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -61,6 +65,13 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   buttonLine: PropTypes.bool,
   buttonColor: PropTypes.oneOf(constants.BUTTON_STYLES),
+  icon: PropTypes.string,
+};
+
+Button.defaultProps = {
+  icon: null,
+  buttonLine: false,
+  buttonColor: constants.BTN_PRIMARY,
 };
 
 export default Button;

@@ -48,7 +48,7 @@ class AuthScreen extends Component {
             <View style={styles.buttonContainer}>
               <Button
                 style={{ marginHorizontal: 5 }}
-                text="Register"
+                text={lang('register')}
                 buttonColor={constants.BTN_PRIMARY}
                 onPress={this.handlePressRegister}
               />

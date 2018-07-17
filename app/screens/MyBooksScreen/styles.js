@@ -5,9 +5,9 @@ export default EStyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     backgroundColor: '$white',
-    paddingHorizontal: 15,
+    paddingHorizontal: 0,
     alignItems: 'stretch',
-    paddingTop: 20,
+    paddingTop: 0,
   },
   buttonLink: {
     marginBottom: 10,

@@ -21,7 +21,7 @@ const Container = ({ children, style }) => {
           currentHeight={60}
           translucent
           barStyle="light-content"
-          backgroundColor={EStyleSheet.value('$primary')}
+          backgroundColor={EStyleSheet.value('$primaryDark')}
         />
         <View style={containerStyles}>{children}</View>
       </React.Fragment>

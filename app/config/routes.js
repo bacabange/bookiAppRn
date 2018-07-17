@@ -22,6 +22,7 @@ import lang from '../i18n';
 // Init theme
 EStyleSheet.build({
   $primary: '#ef476f',
+  $primaryDark: '#d8416c',
   $white: '#ffffff',
   $white7: '#f7f7f7',
   $yellow: '#ffd166',
@@ -29,6 +30,7 @@ EStyleSheet.build({
   $blue: '#118ab2',
   $black: '#333333',
   $gray: '#666666',
+  $gray2: '#999999',
   $white2: '#d3d3d3',
 
   // Debug UI

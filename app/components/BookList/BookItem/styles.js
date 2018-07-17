@@ -4,7 +4,8 @@ export default EStyleSheet.create({
   container: {
     backgroundColor: '$white',
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingTop: 10,
+    paddingBottom: 5,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
@@ -12,6 +13,7 @@ export default EStyleSheet.create({
   detail_container: {
     marginLeft: 20,
     flex: 1,
+    flexDirection: 'column',
   },
   title: {
     fontSize: 16,
@@ -19,8 +21,11 @@ export default EStyleSheet.create({
     color: '$black',
   },
   author: {
-    color: '$gray2',
+    color: '$gray3',
     fontSize: 15,
+  },
+  total_pages: {
+    color: '$gray3',
   },
   progress_pages_container: {
     flexDirection: 'row',
@@ -35,6 +40,21 @@ export default EStyleSheet.create({
   },
   separator: {
     borderBottomWidth: 1,
-    borderBottomColor: '$white7',
+    borderBottomColor: '$white3',
+  },
+  last_story_container: {
+    borderTopWidth: 1,
+    borderTopColor: '$white3',
+    marginTop: 10,
+    marginHorizontal: 15,
+    paddingVertical: 10,
+  },
+  last_story_date: {
+    fontWeight: '700',
+    color: '$gray2',
+    fontStyle: 'italic',
+  },
+  last_story_resume: {
+    fontSize: 12,
   },
 });

@@ -10,8 +10,17 @@ const BookList = ({ props }) => (
   <View style={styles.container} {...props}>
     <FlatList
       ItemSeparatorComponent={() => <BookItemSeparator />}
-      data={[{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }, { key: 'e' }, { key: 'f' }]}
-      renderItem={({ item }) => <BookItem title={item.key} onPress={() => console.log('book')} />}
+      data={[
+        { key: 'a', detail: true },
+        { key: 'b' },
+        { key: 'c' },
+        { key: 'd' },
+        { key: 'e' },
+        { key: 'f' },
+      ]}
+      renderItem={({ item }) => (
+        <BookItem title={item.key} detail={item.detail} onPress={() => console.log('book')} />
+      )}
     />
   </View>
 );

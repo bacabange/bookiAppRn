@@ -31,7 +31,9 @@ EStyleSheet.build({
   $black: '#333333',
   $gray: '#666666',
   $gray2: '#999999',
+  $gray3: '#808080',
   $white2: '#d3d3d3',
+  $white3: '#e6e6e6',
 
   // Debug UI
   // $outline: 1,

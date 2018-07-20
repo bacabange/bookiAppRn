@@ -4,11 +4,12 @@ export default EStyleSheet.create({
   container: {
     backgroundColor: '$white',
     paddingHorizontal: 15,
-    paddingTop: 10,
-    paddingBottom: 5,
+    paddingVertical: 15,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '$white3',
   },
   detail_container: {
     marginLeft: 20,
@@ -19,6 +20,10 @@ export default EStyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '$black',
+  },
+  indicator_current_book: {
+    borderLeftWidth: 5,
+    borderLeftColor: '$green',
   },
   author: {
     color: '$gray3',
@@ -31,7 +36,7 @@ export default EStyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: 5,
+    marginTop: 0,
   },
   progress_pages: {
     color: '$primary',
@@ -43,11 +48,11 @@ export default EStyleSheet.create({
     borderBottomColor: '$white3',
   },
   last_story_container: {
-    borderTopWidth: 1,
-    borderTopColor: '$white3',
-    marginTop: 10,
-    marginHorizontal: 15,
+    backgroundColor: '$white',
+    borderBottomWidth: 1,
+    borderBottomColor: '$white3',
     paddingVertical: 10,
+    paddingHorizontal: 15,
   },
   last_story_date: {
     fontWeight: '700',

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
+import ActionButton from 'react-native-action-button';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import styles from './styles';
 
@@ -36,7 +38,15 @@ class MyBooksScreen extends Component {
             />
           </CardContainer>
         ) : (
-          <BookList />
+          <React.Fragment>
+            <BookList />
+            <ActionButton
+              buttonColor={EStyleSheet.value('$yellow')}
+              onPress={() => {
+                console.log('hi');
+              }}
+            />
+          </React.Fragment>
         )}
       </Container>
     );

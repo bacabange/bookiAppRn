@@ -77,6 +77,8 @@ const TabStack = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: EStyleSheet.value('$primary'),
       inactiveTintColor: EStyleSheet.value('$gray'),
+      style: { height: 60, paddingVertical: 10 },
+      tabStyle: {},
     },
   },
 );

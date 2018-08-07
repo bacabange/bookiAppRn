@@ -35,7 +35,11 @@ const BookList = ({ props }) => (
       }}
       renderHiddenItem={item => (
         <View style={styles.row_back}>
-          <TouchableOpacity style={[styles.back_right_btn]} onPress={() => console.log('delete')}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.back_right_btn]}
+            onPress={() => console.log('delete')}
+          >
             <Text style={styles.back_text_white}>
               <Icon name="plus" size={18} color="#ffffff" />
             </Text>

@@ -10,7 +10,7 @@ class Splash extends Component {
 
     setTimeout(() => {
       this.props.navigation.navigate('Auth');
-    }, 1000);
+    }, 3000);
   }
 
   render() {

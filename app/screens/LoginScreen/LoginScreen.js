@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { View, KeyboardAvoidingView } from 'react-native';
 import lang from '../../i18n';
 
@@ -11,6 +12,8 @@ import { InputText } from '../../components/InputText';
 import { Button } from '../../components/Button';
 import { ButtonLink } from '../../components/ButtonLink';
 
+import { loginUser } from '../../actions/authAction';
+
 import * as constants from '../../config/const';
 
 class LoginScreen extends Component {
@@ -20,7 +23,9 @@ class LoginScreen extends Component {
   }
 
   handlePressLogin = () => {
-    this.props.navigation.navigate('App');
+    console.log('que pasa wey');
+    this.props.dispatch(loginUser('s@i.com', '123456'));
+    // this.props.navigation.navigate('App');
   };
 
   render() {
@@ -63,6 +68,7 @@ class LoginScreen extends Component {
 
 LoginScreen.propTypes = {
   navigation: PropTypes.any,
+  dispatch: PropTypes.func,
 };
 
-export default LoginScreen;
+export default connect()(LoginScreen);

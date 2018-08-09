@@ -19,26 +19,32 @@ import * as constants from '../../config/const';
 class LoginScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      email: null,
+      password: null,
+    };
   }
 
   handlePressLogin = () => {
-    console.log('que pasa wey');
-    this.props.dispatch(loginUser('s@i.com', '123456'));
+    this.props.dispatch(loginUser(this.state.email, this.state.password));
     // this.props.navigation.navigate('App');
+  };
+
+  handleChangeText = (type, value) => {
+    this.setState({ [type]: value });
   };
 
   render() {
     return (
       <Container style={styles.container}>
-        <KeyboardAvoidingView behavior="padding" enabled>
-          <View style={styles.fieldsContainer}>
+        <View style={styles.fieldsContainer}>
+          <KeyboardAvoidingView behavior="padding" enabled>
             <InputGroup label={lang('email')}>
               <InputText
                 placeholder="jhon.does@example.com"
                 autoCorrect={false}
                 keyboardType="email-address"
-                onChangeText={value => console.log(value)}
+                onChangeText={value => this.handleChangeText('email', value)}
               />
             </InputGroup>
 
@@ -48,7 +54,7 @@ class LoginScreen extends Component {
                 textContentType="password"
                 secureTextEntry
                 returnKeyType="done"
-                onChangeText={value => console.log(value)}
+                onChangeText={value => this.handleChangeText('password', value)}
               />
             </InputGroup>
 
@@ -59,8 +65,8 @@ class LoginScreen extends Component {
               onPress={this.handlePressLogin}
               buttonColor={constants.BTN_PRIMARY}
             />
-          </View>
-        </KeyboardAvoidingView>
+          </KeyboardAvoidingView>
+        </View>
       </Container>
     );
   }
@@ -69,6 +75,18 @@ class LoginScreen extends Component {
 LoginScreen.propTypes = {
   navigation: PropTypes.any,
   dispatch: PropTypes.func,
+  email: PropTypes.string,
+  password: PropTypes.string,
 };
 
-export default connect()(LoginScreen);
+const mapStateToProps = (state) => {
+  const email = state.authReducer.email;
+  const password = state.authReducer.password;
+
+  return {
+    email,
+    password,
+  };
+};
+
+export default connect(mapStateToProps)(LoginScreen);

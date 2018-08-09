@@ -14,8 +14,8 @@ import * as constants from '../../config/const';
 
 const RegisterScreen = () => (
   <Container style={styles.container}>
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
-      <View style={styles.fieldsContainer}>
+    <View style={styles.fieldsContainer}>
+      <KeyboardAvoidingView behavior="padding">
         <InputGroup label={lang('name')}>
           <InputText
             placeholder="Jhon Doe"
@@ -47,8 +47,8 @@ const RegisterScreen = () => (
         <Button text={lang('register')} buttonColor={constants.BTN_PRIMARY} />
 
         <ButtonLink text={lang('login_txt_3')} style={styles.buttonLink} />
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </View>
   </Container>
 );
 

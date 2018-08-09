@@ -5,6 +5,6 @@ import store from './config/store';
 
 export default () => (
   <Provider store={store}>
-    <Navigator />
+    <Navigator onNavigationStateChange={null} />
   </Provider>
 );
